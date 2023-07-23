@@ -1479,13 +1479,13 @@ class TestAddressAndGroup(TestEmailBase):
         self.assertEqual(a.addr_spec, 'wok@exàmple.com')
         self.assertEqual(str(a), 'Éric <wok@exàmple.com>')
 
-    def test_addr_spec_ending_with_bullet(self):
+    def test_addr_spec_ending_with_dot(self):
         a = Address('foo', addr_spec='bar@baz.com.')
         self.assertEqual(a.username, 'bar')
         self.assertEqual(a.domain, 'baz.com.')
         self.assertEqual(a.addr_spec, 'bar@baz.com.')
 
-    def test_domain_ending_with_bullet(self):
+    def test_domain_ending_with_dot(self):
         a = Address('foo', username='bar', domain='baz.com.')
         self.assertEqual(a.username, 'bar')
         self.assertEqual(a.domain, 'baz.com.')
