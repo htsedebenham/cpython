@@ -1395,6 +1395,15 @@ class TestParser(TestParserMixin, TestEmailBase):
         with self.assertRaises(errors.HeaderParseError):
             parser.get_domain("  (foo)\t, broken")
 
+    def test_get_domain_ending_with_bullet(self):
+        domain = self._test_get_x(parser.get_domain,
+                                  'example.com.',
+                                  'example.com.',
+                                  'example.com.',
+                                  [],
+                                  '')
+        self.assertEqual(domain.domain, 'example.com.')
+
 
     # get_addr_spec
 
