@@ -1595,9 +1595,9 @@ def get_domain_literal(value):
     return domain_literal, value
 
 def get_domain(value):
-    """ domain = dot-atom / domain-literal / obs-domain
+    """ domain = dot-atom / domain-literal / obs-domain / domain-dot-atom
         obs-domain = atom *("." atom))
-
+        domain-dot-atom = dot-atom "."
     """
     domain = Domain()
     leader = None
